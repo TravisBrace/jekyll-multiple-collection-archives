@@ -20,12 +20,14 @@ To use this plugin, you need to specify which collections you want to archive in
 
 Here is an example configuration:
 
-`collections_with_archives:
+```
+collections_with_archives:
   - name: blogposts
     layout: archive
     archive_type:
       - monthly
     monthly_archive_slug: "/:year/:month/"`
+```
 
 In this example, the plugin will create monthly archives for the `blogposts` collection using the `archive` layout.
 
@@ -49,9 +51,8 @@ The page object in the layout will contain the following data:
 
 Here's an example of a layout (`archive.html`) used for the archive pages:
 
-html
-
-`{% assign date_parts = page.period | split: "-" %}
+```
+{% assign date_parts = page.period | split: "-" %}
 {% assign year = date_parts[0] %}
 {% assign month_number = date_parts[1] | plus: 0 | minus: 1 %}
 {% assign months = 'January February March April May June July August September October November December' | split: ' ' %}
@@ -79,7 +80,8 @@ html
     {% endif %}
 
   {% endif %}
-{% endfor %}`
+{% endfor %}
+```
 
 In this example, the layout first calculates the human-readable month name from the `page.period` value. It then iterates over each post in the archive and includes the post using the `blog-post.html` include.
 
