@@ -60,10 +60,6 @@ Here's an example of a layout (`archive.html`) used for the archive pages:
 <h2 class="page-title"><b>{{month_name}} {{year}} Articles</b></h2>
 
 {% for post in page.posts reversed %}
-  {% assign pagedate = page.period | date: "%Y-%m" | string %}
-  {% assign postdate = post.date | date: "%Y-%m" | string %}
-  {% if pagedate == postdate %}
-
   {% assign today_date = 'now' | date: "%Y-%m-%d" %}
   {% assign post_date = post.date | date: "%Y-%m-%d" %}
     {% if post_date <= today_date %}
