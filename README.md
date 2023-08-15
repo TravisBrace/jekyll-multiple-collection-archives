@@ -73,8 +73,6 @@ Here's an example of a layout (`archive.html`) used for the archive pages:
         <p>{{ post.content | strip_html | truncatewords: 25 | markdownify }}</p>
         <a class="button" href="{{ post.url }}">Continue Reading</a>
       </article>
-    {% endif %}
-
   {% endif %}
 {% endfor %}
 ```
